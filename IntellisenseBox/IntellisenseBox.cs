@@ -162,10 +162,15 @@ namespace SandBeige.IntellisenseBox {
 				return;
 			}
 
+			if (ib.SuggestSource == null) {
+				return;
+			}
+
 			if (ib.Mode != IntellisenseMode.Auto) {
 				ib._collectionView = null;
 				return;
 			}
+
 			ib._collectionView = CollectionViewSource.GetDefaultView(ib.SuggestSource);
 			ib._collectionView.Filter = ib.Filter;
 		}
